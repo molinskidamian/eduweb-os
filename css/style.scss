@@ -1,3 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700;800&display=swap");
+
+$tile-size: 1.5rem;
+$colum-count: 4;
+$row-count: 6;
+$colum-count: 4;
+$row-count: 6;
+$gap: $tile-size / 3;
+$bezel-radius: 0.4rem;
+
 body {
+    font-family: "Catamaran", sans-serif;
+    font-size: 16px;
     background: #0f111a;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.phone-main {
+    display: inline-grid;
+    grid-template-columns: repeat($colum-count, $tile-size);
+    grid-template-row: repeat($row-count, $tile-size);
+    grid-gap: $gap;
+    padding: 0.5rem;
+    border: 0.2rem solid black;
+
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+}
+
+%bezel {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 1rem;
+    background-color: black;
+    border-radius: 0.2rem;
+}
+
+.phone-wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    &::before,
+    &::after {
+        @extend %bezel;
+    }
+    &::before {
+        border-radius: $bezel-radius $bezel-radius 0 0;
+    }
+    &::after {
+        border-radius: 0 0 $bezel-radius $bezel-radius;
+    }
+}
+
+.tile {
+    background: gray;
+    border-radius: 0.2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

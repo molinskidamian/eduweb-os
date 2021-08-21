@@ -1,4 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700;800&display=swap");
 body {
+  font-family: "Catamaran", sans-serif;
+  font-size: 16px;
   background: #0f111a;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.phone-main {
+  display: -ms-inline-grid;
+  display: inline-grid;
+  -ms-grid-columns: (1.5rem)[4];
+      grid-template-columns: repeat(4, 1.5rem);
+  grid-template-row: repeat(6, 1.5rem);
+  grid-gap: 0.5rem;
+  padding: 0.5rem;
+  border: 0.2rem solid black;
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+}
+
+.phone-wrapper::before, .phone-wrapper::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 1rem;
+  background-color: black;
+  border-radius: 0.2rem;
+}
+
+.phone-wrapper {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.phone-wrapper::before {
+  border-radius: 0.4rem 0.4rem 0 0;
+}
+
+.phone-wrapper::after {
+  border-radius: 0 0 0.4rem 0.4rem;
+}
+
+.tile {
+  background: gray;
+  border-radius: 0.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=style.css.map */
